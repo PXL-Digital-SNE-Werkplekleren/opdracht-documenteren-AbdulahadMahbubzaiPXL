@@ -4,6 +4,43 @@
 	<summary class="section-summary">Router Configuratie</summary>
 
 ```
-[Plak hier je basis router configuratie]
+[Building configuration...
+Current configuration : 793 bytes
+version 15.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+hostname Rcentral
+enable secret 5 $1$mERr$9cTjUIEqNGurQiFU.ZeCi1
+no ip cef
+no ipv6 cef
+spanning-tree mode pvst
+interface GigabitEthernet0/0/0
+ip address 192.168.1.1 255.255.255.128
+duplex auto
+speed auto
+interface GigabitEthernet0/0/1
+ip address 192.168.1.129 255.255.255.128
+duplex auto
+speed auto
+interface Vlan1
+no ip address
+shutdown
+ip classless
+ip flow-export version 9
+line con 0
+password 7 0822455D0A16
+login
+line aux 0
+line vty 0 4
+password 7 0822404F1A0A
+login
+transport input ssh
+line vty 5 15
+password 7 0822404F1A0A
+login
+transport input ssh
+end
+]
 ```
 </details>
